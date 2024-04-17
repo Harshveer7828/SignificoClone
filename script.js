@@ -1,3 +1,9 @@
+(function () {
+  var scroll = new LocomotiveScroll();
+})();
+
+
+
 function homepageAnime() {
   let tl = gsap.timeline({
     scrollTrigger: {
@@ -200,7 +206,7 @@ function capsule() {
       start: "top 40%",
       end: "top 10%",
       scrub: 2,
-      markers : true
+      // markers : true
     },
     y:-100
    
