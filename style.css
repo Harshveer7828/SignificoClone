@@ -1,3 +1,7 @@
+body{
+    transition: all ease-in-out 0.5s;
+}
+
 body[theme="black"] {
     background: #000;
     color: white;
@@ -5,7 +9,7 @@ body[theme="black"] {
 
 
 body[theme="cyan"] {
-    background: #AEDEE0;
+    background: #4a4940;
     color: #000000;
 }
 
@@ -109,3 +113,8 @@ body[theme="salmon"] {
     transition-delay: 0.30s;
 }
 
+
+#BottomEmail::placeholder{
+    color: #000000c6;
+    
+}

@@ -1,8 +1,6 @@
 (function () {
-  var scroll = new LocomotiveScroll();
+  const locomotiveScroll = new LocomotiveScroll();
 })();
-
-
 
 function homepageAnime() {
   let tl = gsap.timeline({
@@ -198,48 +196,38 @@ function TextPage() {
   });
 }
 
+document.querySelectorAll(".section").forEach(section=>{
+  ScrollTrigger.create({
+    trigger : section,
+    start : "top 50%",
+    end :"bottom 50%",
+    markers:true,
+    onEnter :function(){
+      document.body.setAttribute("theme",section.dataset.theme)
+    },
+    onEnterBack:function(){
+      document.body.setAttribute("theme",section.dataset.theme)
+
+    }
+  })
+})
+
+
 function capsule() {
-  gsap.set('.right .hilnewala',{y:100})
+  gsap.set('.right .hilnewala',{y:50})
   gsap.to(".right .hilnewala", {
     scrollTrigger: {
       trigger: ".exploreInsights",
       start: "top 40%",
-      end: "top 10%",
+      end: "top 0%",
       scrub: 2,
       // markers : true
     },
-    y:-100
+    y:-50
    
   });
 }
 
-let elements = document.querySelectorAll('.text')
-
-elements.forEach(element=>{
-  let innerText = element.innerText;
-  element.innerHTML = "";
-
-  let textContainer = document.createElement('div');
-  textContainer.classList.add('block');
-
-  for(let letter of innerText){
-    let span = document.createElement('span');
-    span.innerText = letter.trim() === "" ? "" : letter;
-    span.classList.add('letter');
-    textContainer.appendChild(span);
-   
-  }
-  element.appendChild(textContainer)
-  element.appendChild(textContainer.cloneNode(true))
-
-})
-
-elements.forEach(element=>{
-  element.addEventListener('mousemove',()=>{
-    element.classList.remove('play');
-    
-  })
-})
 
 
 
