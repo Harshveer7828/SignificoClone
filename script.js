@@ -33,7 +33,7 @@ function homepageAnime() {
     .to(
       ".rightMove .heroRow",
       {
-        xPercent: -20,
+        xPercent: -10,
         ease: Power2,
       },
       "b"
@@ -198,7 +198,7 @@ document.querySelectorAll(".section").forEach(section=>{
     trigger : section,
     start : "top 50%",
     end :"bottom 50%",
-    // markers:true,
+    markers:true,
     onEnter :function(){
       document.body.setAttribute("theme",section.dataset.theme)
     },
